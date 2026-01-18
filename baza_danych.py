@@ -112,4 +112,7 @@ with tab3:
         if st.button("Usuń kategorię"):
             k_id = df_c[df_c['nazwa'] == kat_del]['id'].values[0]
             try:
-                supabase.table("kategorie").delete().
+                supabase.table("kategorie").delete().eq("id", int(k_id)).execute()
+                st.rerun()
+            except:
+                st.error("Nie można usunąć kategorii, która zawiera produkty!")
