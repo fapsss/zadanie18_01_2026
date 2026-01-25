@@ -2,3 +2,4 @@ streamlit
 pandas
 supabase
 plotly
+pip install streamlit-qrcode-scanner
